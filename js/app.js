@@ -17,16 +17,23 @@ const coeffKm = 0.21; // numero
 // CALCOLO PREZZI BIGLIETTI
 
 let prezzoBiglietto = parseFloat(km * coeffKm);
-console.log(prezzoBiglietto.toFixed(2));
 
 // SCONTO MINORENNI 
 
 if (eta < 18){
-    let scontoMinori = (prezzoBiglietto * (20/100))
-    let scontoMinoriApplicato = (prezzoBiglietto - scontoMinori)
-    console.log(scontoMinoriApplicato.toFixed(2))
+    let scontoMinori = (prezzoBiglietto - (prezzoBiglietto * (20/100)));
+    console.log(scontoMinori.toFixed(2));
 }
 
 // SCONTO PER OVER 65
 
-// OUTPUT DEL PREZZO
+if (eta > 65){
+    let scontoOver = (prezzoBiglietto - (prezzoBiglietto * (40/100)));
+    console.log(scontoOver.toFixed(2));
+}
+
+// PREZZO NON SCONTATO
+
+else {
+    console.log(prezzoBiglietto.toFixed(2));
+}
