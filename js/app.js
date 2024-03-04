@@ -22,18 +22,18 @@ let prezzoBiglietto = parseFloat(km * coeffKm);
 
 if (eta < 18){
     let scontoMinori = (prezzoBiglietto - (prezzoBiglietto * (20/100)));
-    console.log(scontoMinori.toFixed(2));
+    console.log('Prezzo minori ' + scontoMinori.toFixed(2));
 }
 
 // SCONTO PER OVER 65
 
-if (eta > 65){
+else if (eta > 65){
     let scontoOver = (prezzoBiglietto - (prezzoBiglietto * (40/100)));
-    console.log(scontoOver.toFixed(2));
+    console.log('Prezzo over 65 ' + scontoOver.toFixed(2));
 }
 
 // PREZZO NON SCONTATO
 
 else {
-    console.log(prezzoBiglietto.toFixed(2));
+    console.log('Prezzo intero ' + prezzoBiglietto.toFixed(2));
 }
